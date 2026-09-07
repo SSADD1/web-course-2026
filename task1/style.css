@@ -15,7 +15,6 @@ body {
   min-height: 100vh;
 }
 
-/* Header & Nav */
 .site-header {
   width: 100%;
   max-width: 900px;
@@ -55,11 +54,13 @@ body {
 .role {
   font-weight: bold;
   color: #2b6cb0;
+  align-self: center;
 }
 
 .slogan {
   font-style: italic;
   color: #718096;
+  align-self: center;
 }
 
 .main-nav {
