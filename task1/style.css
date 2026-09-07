@@ -42,6 +42,7 @@ body {
   height: 130px;
   border-radius: 50%;
   object-fit: cover;
+  align-self: center;
 }
 
 .header-text {
