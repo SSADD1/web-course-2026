@@ -110,7 +110,6 @@ body {
   gap: 0.5rem;
 }
 
-/* Skills section (Pills/Chips) */
 .skills-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -128,7 +127,6 @@ body {
   font-weight: 500;
 }
 
-/* Footer / Contacts */
 .site-footer {
   width: 100%;
   max-width: 900px;
