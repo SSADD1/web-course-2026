@@ -1,151 +1,147 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Data Processing Excellence</title>
+  <meta name="description" content="Лендинг сервиса по обработке данных с AI.">
+  <title>AI Data Processing — Landing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="page-shell">
+    <header class="site-header container" id="top">
+      <a class="brand-mark" href="#top" aria-label="На главную">
+        <span class="brand-icon" aria-hidden="true">↯</span>
+      </a>
 
-  <div class="page-grid">
+      <nav class="main-nav" aria-label="Основная навигация">
+        <a href="#about">О нас</a>
+        <a href="#services">Услуги</a>
+        <a href="#contact">Контакты</a>
+      </nav>
 
-    <header class="header">
-      <div class="header-container">
-        <button class="hamburger-menu" aria-label="Открыть меню">
-          <span class="hamburger-bar"></span>
-          <span class="hamburger-bar"></span>
-          <span class="hamburger-bar"></span>
-        </button>
+      <a class="contact-chip" href="#contact">Связаться</a>
 
-        <a href="#" class="logo">
-          <svg class="logo-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="image.jpg"/>
-            <circle cx="12" cy="12" r="3"/>
-          </svg>
-        </a>
-
-        <nav class="nav-menu">
-          <a href="#about" class="nav-link">About Us</a>
-          <a href="#services" class="nav-link">Services</a>
-          <a href="#contact" class="nav-link">Contact</a>
-        </nav>
-      </div>
+      <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </header>
 
-    <main class="main-content">
+    <main class="page-grid">
+      <section class="hero container" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">AI DATA PROCESSING</p>
+          <h1 id="hero-title">Championing AI for<br>Data Processing Excellence</h1>
+          <p class="hero-text">
+            Experience the pinnacle of efficiency in data processing with
+            AI at the helm, driving excellence in every operation.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#contact">Связаться</a>
+            <a class="button button-secondary" href="#services">Наши услуги</a>
+          </div>
+        </div>
 
-      <section class="hero-section">
-        <div class="badge">AI DATA PROCESSING</div>
-        <h1 class="hero-title">Championing AI for Data Processing Excellence</h1>
-        <p class="hero-subtitle">
-          Experience the pinnacle of efficiency in data processing with AI at the helm, driving excellence in every operation.
+        <div class="orbital-stage" aria-hidden="true">
+          <div class="orb blob-left"></div>
+          <div class="orb blob-right"></div>
+        </div>
+
+        <div class="hero-badge">Made with Framer</div>
+      </section>
+
+      <section class="trusted container" aria-label="Наши клиенты">
+        <p class="trusted-title">BUSINESSES RELY ON US FOR CONSUMER ENGAGEMENT</p>
+        <div class="logo-row">
+          <span>Logoium</span>
+          <strong>90°</strong>
+          <span>IPRUM</span>
+          <span>log<span class="logo-dot">o</span>haus</span>
+          <strong class="loop-logo">∞</strong>
+          <span>Logosium</span>
+          <span class="capsule">LogoCraft</span>
+        </div>
+      </section>
+
+      <section class="about container" id="about" aria-labelledby="about-title">
+        <div class="section-label">ABOUT US</div>
+        <h2 id="about-title">Crafting Tomorrow's<br>Innovative Solutions</h2>
+        <p>
+          We're consistently pushing the boundaries of innovation to create
+          groundbreaking solutions that effectively meet today's challenges.
         </p>
-        
-        <div class="hero-actions">
-          <a href="#contact" class="btn btn-primary">Contact Us</a>
-          <a href="#services" class="btn btn-secondary">Our Services</a>
-        </div>
-
-        <div class="hero-visuals">
-          <div class="blob blob-left"></div>
-          <div class="blob blob-right"></div>
-        </div>
+        <a class="button button-primary" href="#services">Наши услуги</a>
       </section>
 
-      <section class="partners-section">
-        <p class="partners-title">BUSINESSES RELY ON US FOR CONSUMER ENGAGEMENT</p>
-        <div class="partners-logos">
-          <span class="partner-logo">Logoipsum</span>
-          <span class="partner-logo">09.0</span>
-          <span class="partner-logo">IPSUM</span>
-          <span class="partner-logo">logo-ipsum</span>
-          <span class="partner-logo">Logoipsum</span>
+      <section class="services container" id="services" aria-labelledby="services-title">
+        <div class="section-heading">
+          <div>
+            <div class="section-label">WHY CHOOSE US</div>
+            <h2 id="services-title">Built for smarter data.</h2>
+          </div>
+          <p>Три принципа, которые лежат в основе нашего подхода.</p>
         </div>
-      </section>
 
-      <section id="about" class="about-section">
-        <div class="badge">ABOUT US</div>
-        <h2 class="section-title">Crafting Tomorrow's Innovative Solutions</h2>
-        <p class="section-subtitle">
-          We're consistently pushing the boundaries of innovation to create groundbreaking solutions that effectively meet today's challenges.
-        </p>
-        <div class="about-actions">
-          <a href="#services" class="btn btn-primary">Our Services</a>
-        </div>
-      </section>
-
-      <section id="services" class="cards-section">
-        <div class="cards-grid">
-          
-          <article class="card">
-            <div class="card-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="3" y="3" width="7" height="7" rx="1"/>
-                <rect x="14" y="3" width="7" height="7" rx="1"/>
-<rect x="14" y="14" width="7" height="7" rx="1"/>
-                <rect x="3" y="14" width="7" height="7" rx="1"/>
-              </svg>
-            </div>
-            <h3 class="card-title">Cutting-Edge Expertise</h3>
-            <p class="card-text">Delivering advanced machine learning architectures tailored for scale.</p>
+        <div class="service-grid">
+          <article class="service-card">
+            <div class="service-icon">✦</div>
+            <h3>Cutting-Edge Expertise</h3>
+            <p>Современные AI-подходы для быстрой и точной обработки данных.</p>
           </article>
 
-          <article class="card">
-            <div class="card-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-              </svg>
-            </div>
-            <h3 class="card-title">Modern Innovation</h3>
-            <p class="card-text">Building next-gen AI platforms that transform raw data into insights.</p>
+          <article class="service-card">
+            <div class="service-icon">✣</div>
+            <h3>Modern Innovation</h3>
+            <p>Автоматизируем рутинные операции и создаём гибкие решения.</p>
           </article>
 
-          <article class="card">
-            <div class="card-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"/>
-                <path d="M12 6v6l4 2"/>
-              </svg>
-            </div>
-            <h3 class="card-title">Client-Centric Focus</h3>
-            <p class="card-text">Ensuring end-to-end integration with focus on reliability and security.</p>
+          <article class="service-card">
+            <div class="service-icon">◆</div>
+            <h3>Client-Centric Focus</h3>
+            <p>Фокусируемся на результате, понятной коммуникации и качестве.</p>
           </article>
-
         </div>
       </section>
 
-      <section id="contact" class="contact-section">
-        <h2 class="section-title">Get in Touch</h2>
-        <p class="section-subtitle">Send us a message and our team will get back to you shortly.</p>
+      <section class="contact-section container" id="contact" aria-labelledby="contact-title">
+        <div class="contact-copy">
+          <div class="section-label">CONTACT US</div>
+          <h2 id="contact-title">Let's build the next<br>data experience.</h2>
+          <p>
+            Расскажите о задаче — обсудим процесс, сроки и подходящее решение.
+          </p>
+        </div>
 
-        <form class="contact-form" onsubmit="return false;">
-          <div class="form-group">
-            <label for="user-name" class="form-label">Имя</label>
-            <input type="text" id="user-name" name="name" class="form-input" placeholder="Ваше имя" required>
-          </div>
+        <form class="contact-form">
+          <label>
+            <span>Имя</span>
+            <input type="text" name="name" placeholder="Ваше имя" required>
+          </label>
 
-          <div class="form-group">
-            <label for="user-email" class="form-label">Email</label>
-            <input type="email" id="user-email" name="email" class="form-input" placeholder="name@example.com" required>
-          </div>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" placeholder="you@example.com" required>
+          </label>
 
-          <div class="form-group">
-            <label for="user-message" class="form-label">Сообщение</label>
-            <textarea id="user-message" name="message" class="form-input form-textarea" rows="4" placeholder="Ваше сообщение..." required></textarea>
-          </div>
+          <label>
+            <span>Сообщение</span>
+            <textarea name="message" rows="5" placeholder="Расскажите о проекте" required></textarea>
+          </label>
 
-          <button type="submit" class="btn btn-primary form-btn">Отправить</button>
+          <button class="button button-primary form-button" type="submit">Отправить</button>
         </form>
       </section>
-
     </main>
 
-    <footer class="footer">
-      <p class="footer-copy">&copy; 2026 AI Data Processing. All rights reserved.</p>
+    <footer class="site-footer container">
+      <span>© 2026 AI Data Processing</span>
+      <a href="#top">Наверх ↑</a>
     </footer>
-
   </div>
-
 </body>
 </html>
