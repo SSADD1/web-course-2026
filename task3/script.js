@@ -20,156 +20,156 @@ const filterButtons = document.querySelectorAll(".filter-btn");
 taskForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
-        const text = taskInput.value.trim();
+    const text = taskInput.value.trim();
 
-            // Проверяем, что текст не пустой
-                if (text === "") {
-                        warning.textContent = "Введите текст задачи!";
-                                taskInput.focus();
-                                        return;
-                                            }
+    // Проверяем, что текст не пустой
+    if (text === "") {
+        warning.textContent = "Введите текст задачи!";
+        taskInput.focus();
+        return;
+    }
 
-                                                // Убираем предупреждение
-                                                    warning.textContent = "";
+    // Убираем предупреждение
+    warning.textContent = "";
 
-                                                        // Создаём новую задачу
-                                                            const newTask = {
-                                                                    id: Date.now(),
-                                                                            text: text,
-                                                                                    completed: false
-                                                                                        };
+    // Создаём новую задачу
+    const newTask = {
+        id: Date.now(),
+        text: text,
+        completed: false
+    };
 
-                                                                                            // Добавляем задачу в массив
-                                                                                                tasks.push(newTask);
+    // Добавляем задачу в массив
+    tasks.push(newTask);
 
-                                                                                                    // Очищаем поле ввода
-                                                                                                        taskInput.value = "";
-                                                                                                            taskInput.focus();
+    // Очищаем поле ввода
+    taskInput.value = "";
+    taskInput.focus();
 
-                                                                                                                // Перерисовываем список
-                                                                                                                    render();
-                                                                                                                    });
-
-
-                                                                                                                    // Обработка фильтров
-                                                                                                                    filterButtons.forEach(function (button) {
-                                                                                                                        button.addEventListener("click", function () {
-                                                                                                                                currentFilter = button.dataset.filter;
-
-                                                                                                                                        // Убираем active у всех кнопок
-                                                                                                                                                filterButtons.forEach(function (btn) {
-                                                                                                                                                            btn.classList.remove("active");
-                                                                                                                                                                    });
-
-                                                                                                                                                                            // Добавляем active на нажатую кнопку
-                                                                                                                                                                                    button.classList.add("active");
-
-                                                                                                                                                                                            render();
-                                                                                                                                                                                                });
-                                                                                                                                                                                                });
+    // Перерисовываем список
+    render();
+});
 
 
-                                                                                                                                                                                                // Переключение выполнения задачи
-                                                                                                                                                                                                function toggleTask(id) {
-                                                                                                                                                                                                    tasks = tasks.map(function (task) {
-                                                                                                                                                                                                            if (task.id === id) {
-                                                                                                                                                                                                                        return {
-                                                                                                                                                                                                                                        ...task,
-                                                                                                                                                                                                                                                        completed: !task.completed
-                                                                                                                                                                                                                                                                    };
-                                                                                                                                                                                                                                                                            }
+// Обработка фильтров
+filterButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+        currentFilter = button.dataset.filter;
 
-                                                                                                                                                                                                                                                                                    return task;
-                                                                                                                                                                                                                                                                                        });
+        // Убираем active у всех кнопок
+        filterButtons.forEach(function (btn) {
+            btn.classList.remove("active");
+        });
 
-                                                                                                                                                                                                                                                                                            render();
-                                                                                                                                                                                                                                                                                            }
+        // Добавляем active на нажатую кнопку
+        button.classList.add("active");
 
-
-                                                                                                                                                                                                                                                                                            // Удаление задачи
-                                                                                                                                                                                                                                                                                            function deleteTask(id) {
-                                                                                                                                                                                                                                                                                                tasks = tasks.filter(function (task) {
-                                                                                                                                                                                                                                                                                                        return task.id !== id;
-                                                                                                                                                                                                                                                                                                            });
-
-                                                                                                                                                                                                                                                                                                                render();
-                                                                                                                                                                                                                                                                                                                }
+        render();
+    });
+});
 
 
-                                                                                                                                                                                                                                                                                                                // Отображение задач
-                                                                                                                                                                                                                                                                                                                function render() {
-                                                                                                                                                                                                                                                                                                                    // Очищаем список
-                                                                                                                                                                                                                                                                                                                        taskList.innerHTML = "";
+// Переключение выполнения задачи
+function toggleTask(id) {
+    tasks = tasks.map(function (task) {
+        if (task.id === id) {
+            return {
+                ...task,
+                completed: !task.completed
+            };
+        }
 
-                                                                                                                                                                                                                                                                                                                            // Определяем, какие задачи показывать
-                                                                                                                                                                                                                                                                                                                                let filteredTasks = tasks;
+        return task;
+    });
 
-                                                                                                                                                                                                                                                                                                                                    if (currentFilter === "active") {
-                                                                                                                                                                                                                                                                                                                                            filteredTasks = tasks.filter(function (task) {
-                                                                                                                                                                                                                                                                                                                                                        return !task.completed;
-                                                                                                                                                                                                                                                                                                                                                                });
-                                                                                                                                                                                                                                                                                                                                                                    }
-
-                                                                                                                                                                                                                                                                                                                                                                        if (currentFilter === "completed") {
-                                                                                                                                                                                                                                                                                                                                                                                filteredTasks = tasks.filter(function (task) {
-                                                                                                                                                                                                                                                                                                                                                                                            return task.completed;
-                                                                                                                                                                                                                                                                                                                                                                                                    });
-                                                                                                                                                                                                                                                                                                                                                                                                        }
-
-                                                                                                                                                                                                                                                                                                                                                                                                            // Создаём HTML для каждой задачи
-                                                                                                                                                                                                                                                                                                                                                                                                                filteredTasks.forEach(function (task) {
-                                                                                                                                                                                                                                                                                                                                                                                                                        const li = document.createElement("li");
-                                                                                                                                                                                                                                                                                                                                                                                                                                li.classList.add("task");
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                        if (task.completed) {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                    li.classList.add("completed");
-                                                                                                                                                                                                                                                                                                                                                                                                                                                            }
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                    const text = document.createElement("span");
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                            text.classList.add("task-text");
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    text.textContent = task.text;
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            const completeButton = document.createElement("button");
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    completeButton.classList.add("complete-btn");
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            if (task.completed) {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        completeButton.textContent = "Вернуть";
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                } else {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            completeButton.textContent = "Выполнено";
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    }
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            completeButton.addEventListener("click", function () {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        toggleTask(task.id);
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                });
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        const deleteButton = document.createElement("button");
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                deleteButton.classList.add("delete-btn");
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        deleteButton.textContent = "Удалить";
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                deleteButton.addEventListener("click", function () {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            deleteTask(task.id);
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    });
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            li.appendChild(text);
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    li.appendChild(completeButton);
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            li.appendChild(deleteButton);
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    taskList.appendChild(li);
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        });
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            // Счётчики
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                const activeTasks = tasks.filter(function (task) {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        return !task.completed;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            });
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                const completedTasks = tasks.filter(function (task) {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        return task.completed;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            });
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                activeCount.textContent = activeTasks.length;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    completedCount.textContent = completedTasks.length;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    }
+    render();
+}
 
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    // Первый рендер
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    render();
+// Удаление задачи
+function deleteTask(id) {
+    tasks = tasks.filter(function (task) {
+        return task.id !== id;
+    });
+
+    render();
+}
+
+
+// Отображение задач
+function render() {
+    // Очищаем список
+    taskList.innerHTML = "";
+
+    // Определяем, какие задачи показывать
+    let filteredTasks = tasks;
+
+    if (currentFilter === "active") {
+        filteredTasks = tasks.filter(function (task) {
+            return !task.completed;
+        });
+    }
+
+    if (currentFilter === "completed") {
+        filteredTasks = tasks.filter(function (task) {
+            return task.completed;
+        });
+    }
+
+    // Создаём HTML для каждой задачи
+    filteredTasks.forEach(function (task) {
+        const li = document.createElement("li");
+        li.classList.add("task");
+
+        if (task.completed) {
+            li.classList.add("completed");
+        }
+
+        const text = document.createElement("span");
+        text.classList.add("task-text");
+        text.textContent = task.text;
+
+        const completeButton = document.createElement("button");
+        completeButton.classList.add("complete-btn");
+
+        if (task.completed) {
+            completeButton.textContent = "Вернуть";
+        } else {
+            completeButton.textContent = "Выполнено";
+        }
+
+        completeButton.addEventListener("click", function () {
+            toggleTask(task.id);
+        });
+
+        const deleteButton = document.createElement("button");
+        deleteButton.classList.add("delete-btn");
+        deleteButton.textContent = "Удалить";
+
+        deleteButton.addEventListener("click", function () {
+            deleteTask(task.id);
+        });
+
+        li.appendChild(text);
+        li.appendChild(completeButton);
+        li.appendChild(deleteButton);
+
+        taskList.appendChild(li);
+    });
+
+    // Счётчики
+    const activeTasks = tasks.filter(function (task) {
+        return !task.completed;
+    });
+
+    const completedTasks = tasks.filter(function (task) {
+        return task.completed;
+    });
+
+    activeCount.textContent = activeTasks.length;
+    completedCount.textContent = completedTasks.length;
+}
+
+
+// Первый рендер
+render();

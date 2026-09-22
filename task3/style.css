@@ -1,131 +1,130 @@
 * {
-        box-sizing: border-box;
-        }
+    box-sizing: border-box;
+}
 
-        body {
-            margin: 0;
-                font-family: Arial, sans-serif;
-                    background-color: #f2f2f2;
-                        color: #222;
-                        }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: #222;
+}
 
-                        .container {
-                            width: 90%;
-                                max-width: 650px;
-                                    margin: 50px auto;
-                                        padding: 30px;
-                                            background-color: white;
-                                                border-radius: 12px;
-                                                    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-                                                    }
+.container {
+    width: 90%;
+    max-width: 650px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
 
-                                                    h1 {
-                                                        text-align: center;
-                                                            margin-top: 0;
-                                                            }
+h1 {
+    text-align: center;
+    margin-top: 0;
+}
 
-                                                            #taskForm {
-                                                                display: flex;
-                                                                    gap: 10px;
-                                                                    }
+#taskForm {
+    display: flex;
+    gap: 10px;
+}
 
-                                                                    #taskInput {
-                                                                        flex: 1;
-                                                                            padding: 12px;
-                                                                                font-size: 16px;
-                                                                                    border: 1px solid #ccc;
-                                                                                        border-radius: 6px;
-                                                                                        }
+#taskInput {
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
 
-                                                                                        button {
-                                                                                            border: none;
-                                                                                                border-radius: 6px;
-                                                                                                    padding: 10px 15px;
-                                                                                                        cursor: pointer;
-                                                                                                            font-size: 15px;
-                                                                                                            }
+button {
+    border: none;
+    border-radius: 6px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 15px;
+}
 
-                                                                                                            #taskForm button {
-                                                                                                                background-color: #333;
-                                                                                                                    color: white;
-                                                                                                                    }
+#taskForm button {
+    background-color: #333;
+    color: white;
+}
 
-                                                                                                                    #taskForm button:hover {
-                                                                                                                        background-color: #555;
-                                                                                                                        }
+#taskForm button:hover {
+    background-color: #555;
+}
 
-                                                                                                                        .warning {
-                                                                                                                            min-height: 20px;
-                                                                                                                                margin: 10px 0;
-                                                                                                                                    color: #d32f2f;
-                                                                                                                                    }
+.warning {
+    min-height: 20px;
+    margin: 10px 0;
+    color: #d32f2f;
+}
 
-                                                                                                                                    .counter {
-                                                                                                                                        margin: 15px 0;
-                                                                                                                                            font-weight: bold;
-                                                                                                                                            }
+.counter {
+    margin: 15px 0;
+    font-weight: bold;
+}
 
-                                                                                                                                            .filters {
-                                                                                                                                                display: flex;
-                                                                                                                                                    gap: 8px;
-                                                                                                                                                        margin-bottom: 20px;
-                                                                                                                                                        }
+.filters {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+}
 
-                                                                                                                                                        .filter-btn {
-                                                                                                                                                            background-color: #e5e5e5;
-                                                                                                                                                                color: #222;
-                                                                                                                                                                }
+.filter-btn {
+    background-color: #e5e5e5;
+    color: #222;
+}
 
-                                                                                                                                                                .filter-btn:hover {
-                                                                                                                                                                    background-color: #d0d0d0;
-                                                                                                                                                                    }
+.filter-btn:hover {
+    background-color: #d0d0d0;
+}
 
-                                                                                                                                                                    .filter-btn.active {
-                                                                                                                                                                        background-color: #333;
-                                                                                                                                                                            color: white;
-                                                                                                                                                                            }
+.filter-btn.active {
+    background-color: #333;
+    color: white;
+}
 
-                                                                                                                                                                            #taskList {
-                                                                                                                                                                                list-style: none;
-                                                                                                                                                                                    padding: 0;
-                                                                                                                                                                                        margin: 0;
-                                                                                                                                                                                        }
+#taskList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 
-                                                                                                                                                                                        .task {
-                                                                                                                                                                                            display: flex;
-                                                                                                                                                                                                align-items: center;
-                                                                                                                                                                                                    gap: 10px;
-                                                                                                                                                                                                        padding: 12px;
-                                                                                                                                                                                                            margin-bottom: 10px;
-                                                                                                                                                                                                                background-color: #f5f5f5;
-                                                                                                                                                                                                                    border-radius: 7px;
-                                                                                                                                                                                                                    }
+.task {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    margin-bottom: 10px;
+    background-color: #f5f5f5;
+    border-radius: 7px;
+}
 
-                                                                                                                                                                                                                    .task-text {
-                                                                                                                                                                                                                        flex: 1;
-                                                                                                                                                                                                                            word-break: break-word;
-                                                                                                                                                                                                                            }
+.task-text {
+    flex: 1;
+    word-break: break-word;
+}
 
-                                                                                                                                                                                                                            .completed .task-text {
-                                                                                                                                                                                                                                text-decoration: line-through;
-                                                                                                                                                                                                                                    opacity: 0.6;
-                                                                                                                                                                                                                                    }
+.completed .task-text {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
 
-                                                                                                                                                                                                                                    .complete-btn {
-                                                                                                                                                                                                                                        background-color: #4caf50;
-                                                                                                                                                                                                                                            color: white;
-                                                                                                                                                                                                                                            }
+.complete-btn {
+    background-color: #4caf50;
+    color: white;
+}
 
-                                                                                                                                                                                                                                            .complete-btn:hover {
-                                                                                                                                                                                                                                                background-color: #388e3c;
-                                                                                                                                                                                                                                                }
+.complete-btn:hover {
+    background-color: #388e3c;
+}
 
-                                                                                                                                                                                                                                                .delete-btn {
-                                                                                                                                                                                                                                                    background-color: #e53935;
-                                                                                                                                                                                                                                                        color: white;
-                                                                                                                                                                                                                                                        }
+.delete-btn {
+    background-color: #e53935;
+    color: white;
+}
 
-                                                                                                                                                                                                                                                        .delete-btn:hover {
-                                                                                                                                                                                                                                                            background-color: #c62828;
-                                                                                                                                                                                                                                                            }
+.delete-btn:hover {
+    background-color: #c62828;
 }
