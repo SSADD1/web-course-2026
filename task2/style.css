@@ -629,7 +629,6 @@ h1 {
   }
 }
 
-/* Mobile presentation: the header becomes the required visual hamburger. */
 @media (max-width: 767px) {
   .site-header {
     grid-template-columns: auto 1fr auto;
