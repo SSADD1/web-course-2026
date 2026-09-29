@@ -25,7 +25,7 @@ function generateSecretNumber() {
   const firstDigit = digits.splice(firstIndex, 1)[0];
 
   let result = firstDigit;
-  while (result.length < 4) {
+  while (result.length < 8) {
     const index = Math.floor(Math.random() * digits.length);
     result += digits.splice(index, 1)[0];
   }
