@@ -25,7 +25,7 @@ function generateSecretNumber() {
   const firstDigit = digits.splice(firstIndex, 1)[0];
 
   let result = firstDigit;
-  while (result.length < 4) {
+  while (result.length < 8) {
     const index = Math.floor(Math.random() * digits.length);
     result += digits.splice(index, 1)[0];
   }
@@ -34,11 +34,11 @@ function generateSecretNumber() {
 }
 
 function validateGuess(value) {
-  if (!/^\d{4}$/.test(value)) {
+  if (!/^\d{8}$/.test(value)) {
     return 'Введите ровно 4 цифры без пробелов и символов.';
   }
 
-  if (new Set(value).size !== 4) {
+  if (new Set(value).size !== 8) {
     return 'Все 4 цифры должны быть разными.';
   }
 
@@ -171,7 +171,7 @@ newGameButton.addEventListener('click', startNewGame);
 
 guessInput.addEventListener('input', () => {
   // Разрешаем ввод только цифр и не более 4 символов.
-  guessInput.value = guessInput.value.replace(/\D/g, '').slice(0, 4);
+  guessInput.value = guessInput.value.replace(/\D/g, '').slice(0, 8);
   clearError();
 });
 
