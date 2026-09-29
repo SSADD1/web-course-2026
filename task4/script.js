@@ -34,11 +34,11 @@ function generateSecretNumber() {
 }
 
 function validateGuess(value) {
-  if (!/^\d{4}$/.test(value)) {
+  if (!/^\d{8}$/.test(value)) {
     return 'Введите ровно 4 цифры без пробелов и символов.';
   }
 
-  if (new Set(value).size !== 4) {
+  if (new Set(value).size !== 8) {
     return 'Все 4 цифры должны быть разными.';
   }
 
