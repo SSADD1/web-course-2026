@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Игра «Быки и коровы»</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game" aria-live="polite">
+    <section class="card">
+      <div class="header">
+        <div>
+          <p class="eyebrow">Лабораторная работа №4</p>
+          <h1>Быки и коровы</h1>
+          <p class="subtitle">Угадайте 4-значное число с неповторяющимися цифрами.</p>
+        </div>
+        <div class="score" aria-label="Количество попыток">
+          <span>Попытки</span>
+          <strong id="attemptsCount">0</strong>
+        </div>
+      </div>
+
+      <div class="rules">
+        <div class="rule"><strong>Бык</strong><span>цифра угадана и стоит на своём месте</span></div>
+        <div class="rule"><strong>Корова</strong><span>цифра есть в числе, но стоит на другом месте</span></div>
+      </div>
+
+      <form id="guessForm" class="guess-form" novalidate>
+        <label for="guessInput">Введите число</label>
+        <div class="input-row">
+          <input
+            id="guessInput"
+            name="guess"
+            type="text"
+            inputmode="numeric"
+            maxlength="4"
+            autocomplete="off"
+            placeholder="1234"
+            aria-describedby="inputHint inputError"
+          >
+          <button id="checkButton" type="submit">Проверить</button>
+        </div>
+        <p id="inputHint" class="hint">Ровно 4 разные цифры, без пробелов и символов.</p>
+        <p id="inputError" class="error" role="alert"></p>
+      </form>
+
+      <div id="message" class="message" role="status"></div>
+
+      <div class="history-header">
+        <h2>История попыток</h2>
+        <span id="historyCount">0 ходов</span>
+      </div>
+      <div id="historyEmpty" class="history-empty">Здесь появятся ваши попытки.</div>
+      <ol id="historyList" class="history" aria-label="История попыток"></ol>
+
+      <button id="newGameButton" type="button" class="secondary">Новая игра</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
