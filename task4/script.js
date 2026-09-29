@@ -171,7 +171,7 @@ newGameButton.addEventListener('click', startNewGame);
 
 guessInput.addEventListener('input', () => {
   // Разрешаем ввод только цифр и не более 4 символов.
-  guessInput.value = guessInput.value.replace(/\D/g, '').slice(0, 4);
+  guessInput.value = guessInput.value.replace(/\D/g, '').slice(0, 8);
   clearError();
 });
 
