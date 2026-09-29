@@ -1,0 +1,252 @@
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #172033;
+  background: #eef2ff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(99, 102, 241, 0.18), transparent 36%),
+    radial-gradient(circle at bottom right, rgba(16, 185, 129, 0.14), transparent 34%),
+    #f6f7fb;
+}
+
+button,
+input { font: inherit; }
+
+.game {
+  width: min(100%, 900px);
+  margin: 0 auto;
+  padding: 36px 20px 48px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid #e3e6ef;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(28, 37, 56, 0.12);
+  padding: clamp(22px, 5vw, 44px);
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #646cff;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  line-height: 1;
+}
+
+.subtitle {
+  margin: 14px 0 0;
+  color: #657085;
+  line-height: 1.6;
+}
+
+.score {
+  min-width: 100px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: #f0f1ff;
+  text-align: center;
+}
+
+.score span {
+  display: block;
+  color: #68708a;
+  font-size: 0.8rem;
+  margin-bottom: 4px;
+}
+
+.score strong {
+  font-size: 1.8rem;
+}
+
+.rules {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 30px 0;
+}
+
+.rule {
+  padding: 15px 16px;
+  border: 1px solid #e8eaf1;
+  border-radius: 16px;
+  background: #fafbfe;
+}
+
+.rule strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.rule span {
+  color: #6d7589;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.guess-form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.input-row {
+  display: flex;
+  gap: 10px;
+}
+
+.input-row input {
+  flex: 1;
+  min-width: 0;
+  border: 2px solid #dfe2ea;
+  border-radius: 14px;
+  padding: 14px 16px;
+  outline: none;
+  background: #fff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-row input:focus {
+  border-color: #646cff;
+  box-shadow: 0 0 0 4px rgba(100, 108, 255, 0.12);
+}
+
+button {
+  border: 0;
+  border-radius: 14px;
+  padding: 0 20px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.15s, opacity 0.15s;
+}
+
+button:hover:not(:disabled) { transform: translateY(-1px); }
+button:active:not(:disabled) { transform: translateY(0); }
+button:disabled { cursor: not-allowed; opacity: 0.55; }
+
+#checkButton {
+  min-height: 52px;
+  background: #646cff;
+  color: #fff;
+}
+
+.hint,
+.error {
+  margin: 8px 0 0;
+  font-size: 0.86rem;
+}
+
+.hint { color: #7b8394; }
+.error { color: #d33b50; min-height: 1.25em; }
+
+.message {
+  min-height: 52px;
+  margin-top: 10px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: #f3f5fa;
+  color: #4b5468;
+  line-height: 1.45;
+}
+
+.message.success {
+  background: #eafaf2;
+  color: #18734a;
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.history-header h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.history-header span {
+  color: #81899a;
+  font-size: 0.9rem;
+}
+
+.history-empty {
+  margin-top: 12px;
+  padding: 18px;
+  border: 1px dashed #d8dce6;
+  border-radius: 14px;
+  color: #7b8394;
+  text-align: center;
+}
+
+.history {
+  display: grid;
+  gap: 10px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.history li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 16px;
+  border: 1px solid #e8eaf1;
+  border-radius: 14px;
+  background: #fbfcff;
+}
+
+.guess {
+  letter-spacing: 0.1em;
+  font-weight: 800;
+}
+
+.result {
+  color: #596276;
+  font-size: 0.92rem;
+  text-align: right;
+}
+
+.secondary {
+  width: 100%;
+  min-height: 52px;
+  margin-top: 20px;
+  background: #eef0f6;
+  color: #343b4f;
+}
+
+@media (max-width: 640px) {
+  .game { padding: 18px 12px 28px; }
+  .card { border-radius: 18px; padding: 20px; }
+  .header { flex-direction: column; }
+  .score { width: 100%; }
+  .rules { grid-template-columns: 1fr; }
+  .input-row { flex-direction: column; }
+  #checkButton { width: 100%; min-height: 50px; }
+}
