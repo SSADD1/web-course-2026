@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Memory Sequence — 4 цвета</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game">
+    <section class="card" aria-labelledby="title">
+      <header class="header">
+        <div>
+          <p class="eyebrow">Memory Sequence</p>
+          <h1 id="title">Повтори последовательность</h1>
+          <p id="status" class="status" aria-live="polite">
+            Нажмите «Старт», чтобы начать игру.
+          </p>
+        </div>
+        <button id="startBtn" class="start-btn" type="button">Старт</button>
+      </header>
+
+      <div class="score-row">
+        <div class="score-box">
+          <span>Раунд</span>
+          <strong id="round">0</strong>
+        </div>
+        <div class="score-box">
+          <span>Длина</span>
+          <strong id="length">0</strong>
+        </div>
+        <div class="score-box">
+          <span>Лучший результат</span>
+          <strong id="best">0</strong>
+        </div>
+      </div>
+
+      <div id="board" class="board" aria-label="Игровое поле">
+        <button class="pad pad-green" data-index="0" aria-label="Зелёный"></button>
+        <button class="pad pad-red" data-index="1" aria-label="Красный"></button>
+        <button class="pad pad-yellow" data-index="2" aria-label="Жёлтый"></button>
+        <button class="pad pad-blue" data-index="3" aria-label="Синий"></button>
+      </div>
+
+      <p class="hint">Следите за подсветкой компьютера и повторяйте её кликами.</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
