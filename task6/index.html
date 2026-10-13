@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Змейка — MVC</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">ARCADE / CLASSIC</p>
+        <h1>Змейка</h1>
+      </div>
+      <div class="score-card" aria-live="polite">
+        <span class="score-label">СЧЁТ</span>
+        <strong id="score">0</strong>
+      </div>
+    </header>
+
+    <section class="game-panel" aria-label="Игровое поле">
+      <div class="canvas-wrap">
+        <canvas id="game-canvas" width="600" height="600"
+          aria-label="Игра Змейка. Управление стрелками клавиатуры"></canvas>
+        <div id="overlay" class="overlay">
+          <div class="overlay-card">
+            <span class="overlay-icon" id="overlay-icon">●</span>
+            <h2 id="overlay-title">Готовы играть?</h2>
+            <p id="overlay-text">Собирайте яблоки и не врезайтесь в стены или себя.</p>
+            <button id="start-button" class="primary-button">Начать игру</button>
+          </div>
+        </div>
+      </div>
+      <div class="under-board">
+        <span class="status"><i id="status-dot"></i><span id="status-text">Ожидание запуска</span></span>
+        <span class="hint">Используйте <kbd>↑</kbd> <kbd>↓</kbd> <kbd>←</kbd> <kbd>→</kbd></span>
+      </div>
+    </section>
+
+    <section class="help-grid">
+      <article class="help-card">
+        <span class="help-number">01</span>
+        <div><h3>Собирайте яблоки</h3><p>Каждое яблоко приносит 1 очко и увеличивает змейку.</p></div>
+      </article>
+      <article class="help-card">
+        <span class="help-number">02</span>
+        <div><h3>Планируйте маршрут</h3><p>Нельзя мгновенно развернуться на 180° и врезаться в себя.</p></div>
+      </article>
+    </section>
+    <footer>CLASSIC SNAKE <span>•</span> MVC EDITION</footer>
+  </main>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
