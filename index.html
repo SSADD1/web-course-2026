@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Посты — бесконечная лента</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="model.js" defer></script>
+  <script src="view.js" defer></script>
+  <script src="controller.js" defer></script>
+</head>
+<body>
+  <header class="page-header">
+    <div class="header-inner">
+      <p class="eyebrow">JSONPlaceholder</p>
+      <h1>Лента постов</h1>
+      <p class="subtitle">Посты загружаются по мере прокрутки страницы</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="toolbar" aria-label="Поиск постов">
+      <label for="search-input">Поиск по заголовку</label>
+      <input id="search-input" type="search" placeholder="Например, sunt aut..." autocomplete="off">
+      <p id="results-count" class="results-count" aria-live="polite">Загрузка постов…</p>
+    </section>
+
+    <div id="error-message" class="message error-message" role="alert" hidden></div>
+    <div id="posts-list" class="posts-list" aria-live="polite"></div>
+    <div id="loading-indicator" class="loading-state" role="status" aria-live="polite" hidden>
+      <span class="spinner" aria-hidden="true"></span>
+      <span>Загрузка…</span>
+    </div>
+    <div id="end-message" class="message end-message" hidden>Больше постов нет.</div>
+    <div id="scroll-sentinel" aria-hidden="true"></div>
+    <button id="retry-button" class="retry-button" type="button" hidden>Попробовать снова</button>
+  </main>
+
+  <footer class="page-footer">Данные предоставлены JSONPlaceholder</footer>
+</body>
+</html>
