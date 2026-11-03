@@ -57,7 +57,8 @@ export class SnakeModel {
     const hitSelf = bodyToCheck.some(part => part.x === nextHead.x && part.y === nextHead.y);
 
     if (hitWall || hitSelf) {
-      this.direction = -this.direction;
+      if (direction.x === -this.direction.x && direction.y === -this.direction.y) return;
+      this.nextDirection = direction;
       return;
     }
 
