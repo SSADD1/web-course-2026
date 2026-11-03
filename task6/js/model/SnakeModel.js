@@ -69,7 +69,7 @@ export class SnakeModel {
       if (nextHead.y < 0) {
         this.direction = {x: -1, y: 0};
       }
-      if (nextHead.x >= this.rows) {
+      if (nextHead.y >= this.rows) {
         this.direction = {x: 1, y: 0};
       }
       this.nextDirection = this.direction;
