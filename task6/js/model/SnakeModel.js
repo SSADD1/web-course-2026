@@ -56,10 +56,14 @@ export class SnakeModel {
       nextHead.y < 0 || nextHead.y >= this.rows;
     const hitSelf = bodyToCheck.some(part => part.x === nextHead.x && part.y === nextHead.y);
 
-    if (hitWall || hitSelf) {
-      if (direction.x === -this.direction.x && direction.y === -this.direction.y) return;
-      this.nextDirection = direction;
-      return;
+    if (hitWall) {
+      if nextHead.x < 0 || nextHead.x >= this.columns {
+        this.direction.x = -this.direction.x
+      }
+      return
+    }
+    if(hitSelf){
+      this.gameOver = true;
     }
 
     this.snake.unshift(nextHead);
