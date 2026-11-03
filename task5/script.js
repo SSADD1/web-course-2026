@@ -1,6 +1,3 @@
-(() => {
-  "use strict";
-
   const pads = [...document.querySelectorAll(".pad")];
   const startBtn = document.querySelector("#startBtn");
   const statusEl = document.querySelector("#status");
@@ -239,4 +236,3 @@
   });
 
   updateScore();
-})();
