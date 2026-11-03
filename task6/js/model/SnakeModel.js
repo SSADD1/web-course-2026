@@ -61,16 +61,16 @@ export class SnakeModel {
 
     if (hitWall) {
       if (nextHead.x < 0) {
-        this.direction.x = {x: 0, y: -1};
+        this.direction = {x: 0, y: -1};
       }
       if (nextHead.x >= this.columns) {
-        this.direction.x = {x: 0, y: 1};
+        this.direction = {x: 0, y: 1};
       }
       if (nextHead.y < 0) {
-        this.direction.x = {x: -1, y: 0};
+        this.direction = {x: -1, y: 0};
       }
       if (nextHead.x >= this.rows) {
-        this.direction.x = {x: 1, y: 0};
+        this.direction = {x: 1, y: 0};
       }
       this.nextDirection = this.direction;
       nextHead = { x: head.x + this.direction.x, y: head.y + this.direction.y};
