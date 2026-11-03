@@ -47,7 +47,7 @@ export class SnakeModel {
 
     this.direction = this.nextDirection;
     const head = this.snake[0];
-    const nextHead = { x: head.x + this.direction.x, y: head.y + this.direction.y };
+    let nextHead = { x: head.x + this.direction.x, y: head.y + this.direction.y };
     const eating = this.apple && nextHead.x === this.apple.x && nextHead.y === this.apple.y;
 
     // Если не едим яблоко, хвост освободит клетку в этом же шаге.
