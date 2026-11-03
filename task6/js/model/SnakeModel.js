@@ -52,8 +52,11 @@ export class SnakeModel {
 
     // Если не едим яблоко, хвост освободит клетку в этом же шаге.
     const bodyToCheck = eating ? this.snake : this.snake.slice(0, -1);
-    const hitWall = nextHead.x < 0 || nextHead.x >= this.columns ||
-      nextHead.y < 0 || nextHead.y >= this.rows;
+    const hitWall =
+         nextHead.x < 0 ||
+         nextHead.x >= this.columns ||
+         nextHead.y < 0 ||
+         nextHead.y >= this.rows;
     const hitSelf = bodyToCheck.some(part => part.x === nextHead.x && part.y === nextHead.y);
 
     if (hitWall) {
