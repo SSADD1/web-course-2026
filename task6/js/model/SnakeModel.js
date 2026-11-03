@@ -60,16 +60,16 @@ export class SnakeModel {
     const hitSelf = bodyToCheck.some(part => part.x === nextHead.x && part.y === nextHead.y);
 
     if (hitWall) {
-      if nextHead.x < 0 {
+      if (nextHead.x < 0) {
         this.direction.x = {x: 0, y: -1};
       }
-      if nextHead.x >= this.columns {
+      if (nextHead.x >= this.columns) {
         this.direction.x = {x: 0, y: 1};
       }
-      if nextHead.y < 0 {
+      if (nextHead.y < 0) {
         this.direction.x = {x: -1, y: 0};
       }
-      if nextHead.x >= this.rows {
+      if (nextHead.x >= this.rows) {
         this.direction.x = {x: 1, y: 0};
       }
       this.nextDirection = this.direction;
