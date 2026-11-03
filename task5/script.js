@@ -206,7 +206,7 @@
     if (success) {
       setStatus(`Игра завершена. Ваш результат: ${score}.`);
     } else {
-      statusEl.style.color = "ff4444";
+      statusEl.style.color = "#ff4444";
       setStatus(`Ошибка! Игра окончена. Вы дошли до ${score}.`);
     }
   }
