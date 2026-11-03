@@ -58,7 +58,7 @@ export class SnakeModel {
 
     if (hitWall) {
       if nextHead.x < 0 || nextHead.x >= this.columns {
-        this.direction.x = -this.direction.x
+        this.direction.x = {x: -1, y: 0};
       }
       return
     }
