@@ -69,7 +69,10 @@ export class SnakeModel {
       if nextHead.x >= this.rows {
         this.direction.x = {x: 1, y: 0};
       }
+      this.nextDirection = this.direction;
+      nextHead = { x: head.x + this.direction.x, y: head.y + this.direction.y};
       return
+      
     }
     if(hitSelf){
       this.gameOver = true;
