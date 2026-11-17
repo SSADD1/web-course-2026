@@ -1,0 +1,7 @@
+{
+  "todos": [
+    { "id": 1, "text": "Изучить компоненты и props", "completed": true, "createdAt": 1763000000000 },
+    { "id": 2, "text": "Разобраться с useState и useEffect", "completed": false, "createdAt": 1763000100000 },
+    { "id": 3, "text": "Оптимизировать рендеры через memo", "completed": false, "createdAt": 1763000200000 }
+  ]
+}
